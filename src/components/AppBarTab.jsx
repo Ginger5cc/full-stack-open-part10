@@ -18,6 +18,9 @@ const AppBarTab = ( {title}) => {
         case "Repositories":
             link = '/'
             break
+        case "Sign Out":
+            link = '/signout'
+            break
         default: 
             break
     }

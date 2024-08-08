@@ -45,7 +45,7 @@ const RepositoryItem = ({item}) => {
         <View style={styles.flexItem}>
             <Image
             style={styles.tinyLogo}
-            source={require('../img/icon_large.webp')}
+            source={{url: item.ownerAvatarUrl}}
           />
           <View style={styles.flexItem2}>
             <Text fontWeight="bold" fontSize="subheading">{item.fullName}</Text>
