@@ -1,5 +1,6 @@
-import { View, StyleSheet, Image } from "react-native"
+import { View, StyleSheet, Image, Pressable } from "react-native"
 import Text from "./Text";
+import * as Linking from 'expo-linking';
 
 const styles = StyleSheet.create({
   flexContainer: {
@@ -7,6 +8,7 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#ffffff",
     marginBottom: 8,
+    alignSelf: 'stretch',
     
   },
   flexItem: {
@@ -17,6 +19,9 @@ const styles = StyleSheet.create({
   },
   flexItem2: {
     display: 'flex',
+    flexGrow: 1,
+    flex: 1,
+    gap: 5
   },
   tinyLogo: {
     width: 50,
@@ -32,14 +37,24 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: "center",
   },
-  description: {
-    flexGrow: 1,
-    flex: 1,
+  language:{
+    backgroundColor: "#0366d6",
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    alignSelf:'baseline',
+    marginTop: 5,
+  },
+  githubButton:{
+    marginTop: 16,
+    backgroundColor: "#0366d6",
+    borderRadius: 5,
+    paddingVertical:10,
   }
 });
 
 
-const RepositoryItem = ({item}) => {
+const RepositoryItem = ({item, showButton}) => {
     return (
       <View testID="repositoryItem"  style={styles.flexContainer}>
         <View style={styles.flexItem}>
@@ -50,9 +65,11 @@ const RepositoryItem = ({item}) => {
           <View style={styles.flexItem2}>
             <Text fontWeight="bold" fontSize="subheading">{item.fullName}</Text>
             <View style={styles.description}>
-              <Text>{item.description}</Text>
+              <Text style={{lineHeight: 16}} color="textSecondary">{item.description}</Text>
              </View>
-            <Text>{item.language}</Text>
+             <View style={styles.language}>
+              <Text style={{color: "#ffffff"} }>{item.language}</Text>
+            </View>
           </View>
         </View>
         <View style={styles.flexDetails}>
@@ -77,8 +94,12 @@ const RepositoryItem = ({item}) => {
               <Text fontWeight="normal" color="textSecondary" align='center'>Rating</Text>
           </View>
           
-
         </View>
+        
+        <Pressable style={showButton? styles.githubButton : {display: "none"}} onPress={() => Linking.openURL(item.url)} >
+          <Text fontWeight="bold" fontSize="subheading" style={{color: "#ffffff", textAlign: "center"}}>Open In Github</Text>
+        </Pressable>
+        
       </View>
     );
   };
