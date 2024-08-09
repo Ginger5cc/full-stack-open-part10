@@ -21,14 +21,14 @@ const AppBar = () => {
     fetchPolicy: 'cache-and-network',
   } );  
   console.log('data is', data)
-  if (data.me) {
+  if (data){if (data.me) {
     return <View style={styles.container}>
     <ScrollView horizontal>
       <AppBarTab title="Repositories"/>
       <AppBarTab title="Sign Out"/>
     </ScrollView>  
   </View>;
-  }
+  }}
   return <View style={styles.container}>
     <ScrollView horizontal>
       <AppBarTab title="Repositories"/>
