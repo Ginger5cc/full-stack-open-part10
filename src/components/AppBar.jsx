@@ -22,19 +22,22 @@ const AppBar = () => {
   } );  
   console.log('data is', data)
   if (data){if (data.me) {
-    return <View style={styles.container}>
-    <ScrollView horizontal>
-      <AppBarTab title="Repositories"/>
-      <AppBarTab title="Sign Out"/>
-    </ScrollView>  
-  </View>;
+    return (
+    <View style={styles.container}>
+      <ScrollView horizontal>
+        <AppBarTab title="Repositories"/>
+        <AppBarTab title="Create Review"/>
+        <AppBarTab title="Sign Out"/>
+      </ScrollView>  
+    </View>);
   }}
-  return <View style={styles.container}>
+  return (
+  <View style={styles.container}>
     <ScrollView horizontal>
       <AppBarTab title="Repositories"/>
       <AppBarTab title="Sign In"/>
     </ScrollView>  
-  </View>;
+  </View>)
 };
 
 export default AppBar;

@@ -19,7 +19,7 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const SingleRepository = () => {
   const {id} = useParams()
-  console.log('id is', id)
+
   const { data, error, loading } = useQuery( GET_SINGLE_REPO, { 
     fetchPolicy: 'cache-and-network',
     variables: { repositoryId: id},

@@ -21,6 +21,9 @@ const AppBarTab = ( {title}) => {
         case "Sign Out":
             link = '/signout'
             break
+        case "Create Review":
+            link = '/createReview'
+            break
         default: 
             break
     }

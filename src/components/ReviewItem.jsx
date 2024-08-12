@@ -32,7 +32,7 @@ const styles = StyleSheet.create ({
   }
 })
 const ReviewItem = ({item}) => {
-  console.log('item is', item)
+  
   return (
     <View style={styles.container}>
       <View style={styles.rating}>
