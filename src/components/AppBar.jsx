@@ -20,13 +20,14 @@ const AppBar = () => {
   const { data, error, loading } = useQuery( ME, {
     fetchPolicy: 'cache-and-network',
   } );  
-  console.log('data is', data)
+
   if (data){if (data.me) {
     return (
     <View style={styles.container}>
       <ScrollView horizontal>
         <AppBarTab title="Repositories"/>
         <AppBarTab title="Create Review"/>
+        <AppBarTab title="My Reviews"/>
         <AppBarTab title="Sign Out"/>
       </ScrollView>  
     </View>);
@@ -36,6 +37,7 @@ const AppBar = () => {
     <ScrollView horizontal>
       <AppBarTab title="Repositories"/>
       <AppBarTab title="Sign In"/>
+      <AppBarTab title="Sign Up"/>
     </ScrollView>  
   </View>)
 };

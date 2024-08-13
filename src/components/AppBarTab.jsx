@@ -15,6 +15,9 @@ const AppBarTab = ( {title}) => {
         case "Sign In":
             link = '/signin'
             break
+        case "Sign Up":
+            link = '/signup'
+            break
         case "Repositories":
             link = '/'
             break
@@ -23,6 +26,9 @@ const AppBarTab = ( {title}) => {
             break
         case "Create Review":
             link = '/createReview'
+            break
+        case "My Reviews":
+            link = '/myreviews'
             break
         default: 
             break

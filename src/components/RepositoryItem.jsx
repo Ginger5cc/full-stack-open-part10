@@ -55,12 +55,13 @@ const styles = StyleSheet.create({
 
 
 const RepositoryItem = ({item, showButton}) => {
+
     return (
       <View testID="repositoryItem"  style={styles.flexContainer}>
         <View style={styles.flexItem}>
             <Image
             style={styles.tinyLogo}
-            source={{url: item.ownerAvatarUrl}}
+            source={{uri: item.ownerAvatarUrl}}
           />
           <View style={styles.flexItem2}>
             <Text fontWeight="bold" fontSize="subheading">{item.fullName}</Text>
