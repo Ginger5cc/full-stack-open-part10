@@ -1,7 +1,6 @@
-import { View, TextInput, StyleSheet } from "react-native"
-import { useState } from "react"
+import { StyleSheet } from "react-native"
 import { Searchbar } from 'react-native-paper';
-import { useDebounce } from 'use-debounce';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -11,10 +10,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const SearchBar = () => {
-
-  const [searchQuery, setSearchQuery] = useState('');
-  const [value] = useDebounce(searchQuery, 1000);
+const SearchBar = ({searchQuery, setSearchQuery}) => {
   
   return(
       <Searchbar
@@ -23,6 +19,7 @@ const SearchBar = () => {
         value={searchQuery}
         mode="view"
         style={styles.container}
+        autoCapitalize='none'
     />
   )
 }

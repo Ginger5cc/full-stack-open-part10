@@ -25,7 +25,6 @@ const Main = () => {
     <AppBar />
     <View style={styles.container}>
       
-    
     <Routes>
         <Route path="/" element={<RepositoryList />} />
         <Route path="/:id" element={<SingleRepository />} />

@@ -18,6 +18,7 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const MyReviews = () => {
   const { loading, error, data, refetch } = useQuery( ME, {
+    fetchPolicy: 'cache-and-network',
     variables: {includeReviews: true }
   } );  
   if (loading) return <Text>Loading...</Text>
